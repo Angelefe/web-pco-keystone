@@ -1,0 +1,7 @@
+extends ./layout.pug  
+block contenido  
+  - for (var i= 0; i < img_periodicos.images.length ; i++){
+      - url = img_periodicos.images[i].url
+      a(href= '#' , target='_blank')
+        img(src= url, alt='lco35', width='180px')
+  - } 
