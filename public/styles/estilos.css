@@ -6,50 +6,69 @@ body {
 	Arial,
 	" sans-serif";
 	margin: 0px;
+
 }
 
 /*  HEADER CON BARRA DE NAVEGACIÓN Y BANNER*/
 
 		/*  HEADER PARA VIEWPORT CHICO*/
 		header{
-			margin: 0px;
+			margin: 0px 0 70px 0;
 			display: -webkit-flex;
 			display: -ms-flex;
 			display: flex;
 			flex-wrap: wrap;
 		}
+
 		.banner{
-			z-index: 3;
-			width: 90%;
-			height: 10.3vw;
+			z-index: 1;
+			width: 100%;
+			height: 8.4vw;
+			min-height: 70px;
+			position: fixed;
+			margin-bottom: 80px;
 			background-repeat: no-repeat;
-			position: fixed;
-			background-size: contain;
 			background-position: center;
-			background-image: url('../imagenes/Banner.fw.png');
-			box-shadow: 0px 0px 5px black;
-		}
+			background-size: cover;
+			background-image: url('../imagenes/fondo.fw.png');
+			}
+
+	  .banner2{
+				z-index: 5;
+				width: 80%;
+				right: 0px;
+				min-height: 80px;
+				max-height: 40px;
+				position: fixed;
+				background-size:250px;
+				background-position: left;
+				background-repeat: no-repeat;
+				background-image: url('../imagenes/tituloc3.fw.png');
+			}
+
 		.menu-hamburguesa{
-			width: 10%;
-			height: 10.3vw;
-			right: 0px;
-			position: fixed;
+			width: 20%;
+			min-height: 70px;
+			left: 0px;
 			display: -webkit-flex;
 			display: -ms-flex;
 			display: flex;
+			position: fixed;
 			justify-content: center;
 			align-items: center;
-			background-color: black;
-			z-index: 3;
+			background: rgba(255, 255, 255, 0);
+			z-index: 2;
 		}
+
 		.menu-hamburguesa .fa{
 			color: white;
 			font-size: 8vw !important;
 		}
+
 		header ul{
 			z-index: 2;
-			position: fixed;
 			padding-top: 10.3vw;
+			position: fixed;
 			width: 100%;
 			margin: 0px;
 			display: none;
@@ -57,29 +76,94 @@ body {
 			background: rgba(73, 73, 73, 0.95);
 			padding-left: 2%;
 		}
+
 		header ul li a{
 			font-size: 30px;
 			color:#fff;
 			text-decoration: none;
 		}
 
+		.aside{
+			max-width: 10px;
+			min-width: 10px;
+			display: -webkit-flex;
+			display: -ms-flex;
+			display: flex;
+			flex-wrap: wrap;
+			flex-direction: row;
+		}
+
+		.main .aside{
+			max-width: 250px;
+			min-width: 300px;
+			flex-basis: 25vw;
+			display: -webkit-flex;
+			display: -ms-flex;
+			display: flex;
+			flex-direction: column;
+			}
+
+			.aside .noticia{
+				width: 300px;
+				flex-basis: 410px;
+			}
+
+			footer {
+				margin-top: 20px;
+				background: #000;
+				color: #fff;
+				clear:both;
+				padding: 20px, 0px;
+				text-align:center;
+				height: 20px
+
+			}
 /* HEADER PARA VIEWPORTS GRANDES */
 		@media (min-width: 1205px) {
 			header{
 				margin: 0px;
 				display: -webkit-flex;
 				display: -ms-flex;
-				display: flex;
+				display: block;
 				flex-wrap: wrap;
+
 			}
 			.banner{
+				z-index: 1;
 				width: 100%;
-				height: 11.4vw;
+				height: 8.4vw;
+				position: relative;
 				background-repeat: no-repeat;
 				background-size: contain;
 				background-position: center;
-				background-image: url('../imagenes/Banner.fw.png');
+				background-image: url('../imagenes/fondo.fw.png');
 			}
+
+			.banner2{
+				z-index: 2;
+				width: 100%;
+				height: 8.4vw;
+				margin: 20px 0 0 30px;
+				left:10px;
+				position: absolute;
+				background-position: left;
+				background-repeat: no-repeat;
+				background-size: 370px;
+				background-image: url('../imagenes/titulo.fw.png');
+			}
+
+			.banner3{
+				z-index: 3;
+				width: 100%;
+				height: 8.4vw;
+				position: absolute;
+				right: 10px;
+				background-repeat: no-repeat;
+				background-size: 110px;
+				background-position: right;
+				background-image: url('../imagenes/logo.fw.png');
+			}
+
 			.menu-hamburguesa{
 				display: none;
 			}
@@ -87,17 +171,16 @@ body {
 			header ul{
 				z-index: 4;
 				width: 50%;
-				top: 0.7vw;
+				top: 3.7vw;
 				height: 10vw;
 				margin: 0px;
 				left: 38%;
-				position: fixed;
+				position: absolute;
 				display: -webkit-flex;
 				display: -ms-flex;
 				display: flex;
 				flex-wrap: wrap;
 				justify-content: space-around;
-				align-content: space-around;
 				list-style: none;
 				padding: 0%;
 				background: rgba(255, 255, 255, 0);
@@ -108,15 +191,21 @@ body {
 				display: flex;
 				justify-content: center;
 				align-content: center;
-						width: 150px;
 			}
 
 			header ul li ul{
 				display: none;
 				position: relative;
-				left: -75px;
+				left: -150px;
 				top: 50px;
+
 			}
+
+			header ul li:hover ul{
+				display: block;
+
+			}
+
 			header ul li a{
 				background-color: rgba(73, 73, 73, 0.75);
 				border-radius: 10px;
@@ -133,11 +222,13 @@ body {
 				align-items: center;
 				height: 50px;
 			}
+
+
 			header ul li a:hover,header ul li a:focus {
-				color: #fff;
-				border:
+				background-color: #FFF;
+				color: #000;
 			}
-		}
+
 /*  CUERPO DE LA PAGINA*/
 		.main{
 			display: -webkit-flex;
@@ -282,7 +373,7 @@ body {
 		  bottom: 0;
 		  left: 0;
 		  right: 0;
-		  background: #700877;
+		  background: #000000;
 		  content: '';
 		  background: -moz-linear-gradient(90deg, #700877 0%, #ff2759 100%, #ff2759 100%);
 		  background: -webkit-linear-gradient(90deg, #700877 0%, #ff2759 100%, #ff2759 100%);

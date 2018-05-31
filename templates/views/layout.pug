@@ -6,48 +6,91 @@ head
   meta(http-equiv="X-UA-Compatible", content="ie=edge")
   title Document
   //-estilos css
-  link(rel="stylesheet", href="styles/estilos.css")  
+  link(rel="stylesheet", href="styles/estilos2.css")
+  link(rel="stylesheet", href="styles/fontello.css") 
+    //-jquery
+  script(src='https://code.jquery.com/jquery-3.3.1.min.js')
+  
   //-font awesome
   link(rel="stylesheet",
   | href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css")
 body
   header
     .banner
-    .menu-hamburguesa.desplegable(nombre="menuPrincipal")
-      i.fa.fa-bars
-    ul(desplegado-por="menuPrincipal")
-      li
-        a(href='/')
-          | Inicio
-      li.desplegable(nombre="quienesSomos")
-        a(href='#')
-          | Quienes Somos
-        ul(desplegado-por="quienesSomos")
-          li
-            a(href='/quienes')
-              | Partido de la Causa Obrera
-          li
-            a(href='/enlace')
-              | Comite de Enlace Internacional
-      li.desplegable(nombre="prensa")
-        a(href='#')
-          | Prensa
-        ul(desplegado-por="prensa")
-          li
-            a(href='/notas')
-              | Notas
-          li
-            a(href='/periodicos')
-              | Periódicos LCO
-          li
-            a(href='/manifiesto')
-              | Revista Internacional
-          li
-            a(href='/mujer')
-              | La Mujer Trabajadora
-      li
-        a(href='/contacto')
-          | Contacto
+      .banner2
+      .banner3
+        input(type='checkbox', id='btn-menu')
+        label(for='btn-menu' class='icon-menu')
+        nav.menu
+          ul
+            li
+              a(href='/')
+                | Inicio
+            li.submenu
+              a(href='#') 
+                | Quienes Somos
+              ul
+                li
+                  a(href='/quienes')
+                    | Partido de la Causa Obrera
+                li
+                  a(href='/enlace')
+                    | Comite de Enlace Internacional
+            li.submenu
+              a(href='#')
+                | Prensa
+              ul
+                li
+                  a(href='/notas')
+                    | Notas
+                li
+                  a(href='/periodicos')
+                    | Periódicos LCO
+                li
+                  a(href='/manifiesto')
+                    | Revista Internacional
+                li
+                  a(href='/mujer')
+                    | La Mujer Trabajadora
+            li
+              a(href='/contacto')
+                | Contacto 
+        
+    //-  nav    
+      ul
+        li
+          a(href='/')
+            | Inicio
+        li
+          a(href='#')
+            | Quienes Somos
+          ul
+            li
+              a(href='/quienes')
+                | Partido de la Causa Obrera
+            li
+              a(href='/enlace')
+                | Comite de Enlace Internacional
+        li
+          a(href='#')
+            | Prensa
+          ul
+            li
+              a(href='/notas')
+                | Notas
+            li
+              a(href='/periodicos')
+                | Periódicos LCO
+            li
+              a(href='/manifiesto')
+                | Revista Internacional
+            li
+              a(href='/mujer')
+                | La Mujer Trabajadora
+        li
+          a(href='/contacto')
+            | Contacto 
+          
   section.main
     secciones
       section.articles
@@ -83,10 +126,9 @@ body
         a(href='archivos/lco1.pdf', target='_blank')
   footer
     p Partido de la Causa Obrera - PCO
-  //-jquery
-  script(src='https://code.jquery.com/jquery-3.3.1.min.js',
-  | integrity='sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=', crossorigin='anonymous')
+
+  
   //-codigos js
-  script(src='/js/codigo.js')
+  script(src='/js/menu.js')
             
               
