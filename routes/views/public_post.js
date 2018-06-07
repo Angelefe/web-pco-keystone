@@ -8,7 +8,6 @@ exports = module.exports = function (req, res) {
 	locals.section = 'home';
 	Post.model.findById(req.params.id)
 	.exec(function(err, post) {
-			console.log(post);
-			res.render("public_post",{ post:post});
+			view.render("public_post",{ post:post});
 	});
 };

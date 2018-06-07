@@ -1,11 +1,11 @@
 extends ./layout.pug  
 block contenido        
-  - var id
+  - var slug
   - var url
   - for (var i = 0; i < posts.length; i++) {
-    - id = posts[i]._id
+    - slug = posts[i].slug
     - url = posts[i].image.url 
-    a(href= '/nota/'+id, style='text-decoration: none; color: black;')
+    a(href= '/nota/'+slug, style='text-decoration: none; color: black;')
       article
         img( src = url, alt='aceiteros')
         .titulo #{posts[i].title}
