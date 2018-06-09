@@ -8,11 +8,11 @@ exports = module.exports = function (req, res) {
 	locals.section = 'home';
 	Post.model.find()
     .where('state', 'published')
-		.where('categories', ['5aeb8c0e6f61fe19b501f9e7'])
     .sort('-publishedAt')
+		.limit('6')
     .exec(function(err, posts) {
       console.log(posts);
 			view.render('index',{posts: posts});
     });
 	// Render the view
-};
+}
