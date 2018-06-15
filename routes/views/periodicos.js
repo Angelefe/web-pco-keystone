@@ -6,10 +6,12 @@ exports = module.exports = function (req, res) {
 	// locals.section is used to set the currently selected
 	// item in the header navigation.
 	locals.section = 'home';
+
+
 	Gallery.model.findOne()
     .where('name', 'periodicos')
     .exec(function(err, img_periodicos) {
-      console.log(img_periodicos.images);
+      //console.log(img_periodicos.images);
 			view.render('periodicos',{img_periodicos: img_periodicos});
     });
 	// Render the view
